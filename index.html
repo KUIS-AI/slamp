@@ -74,11 +74,12 @@
     <img style="width: 100%;" src="./resources/teaser_mnist.gif" alt="MNIST."/> <br><br>
     <img style="width: 100%;" src="./resources/teaser_kth.gif" alt="KTH."/> <br><br>
     <img style="width: 100%;;" src="./resources/teaser_bair.gif" alt="BAIR."/> <br><br>
-    <img style="width: 100%;height: 25%" src="./resources/teaser_city.gif" alt="Cityscapes."/>
+    <img style="width: 100%;height: 25%" src="./resources/teaser_city.gif" alt="Cityscapes."/> <br><br>
+    <img style="width: 100%;height: 25%" src="./resources/teaser_kitti.gif" alt="KITTI."/>
     <br>
     <br>
-    <p style="width: 80%;">
-        Example predictions for MNIST, KTH and BAIR datasets</a>.
+    <p style="width: 80%;text-align:center;">
+        Example predictions for MNIST, KTH, BAIR, Cityscapes and KITTI datasets</a>.
     </p>
 
     <br><br>
@@ -107,6 +108,10 @@
     <h1>Method Overview</h1>
     <img style="width: 80%;" src="./resources/method.jpg"
          alt="Method overview figure"/>
+    <br><br>
+    <p style="width: 80%;">
+        Instead of focusing on pixel space only, we also focused a more meaningful space by modelling the motion of the scene. We model the motion history explicitly by learning to predict the optical flow which is needed to go from the current frame to future frame besides predicting the future scene in the pixel space. At the end, we have two predictions, one coming from pixel prediction head, and the other one coming from optical flow warping, and we combine both predictions by predicting a mask to choose between these two predictions. The final prediction consists of best parts of both predictions.
+    </p>
     <br>
     <a class="links">[Code is coming.]</a>
 
@@ -125,6 +130,9 @@
          <br><br>
     <img style="width: 100%;height: 25%" src="./resources/result_city.gif"
          alt="Results figure"/>
+         <br><br>
+    <img style="width: 100%;height: 25%" src="./resources/result_kitti.gif"
+         alt="Results figure"/>
 
     <br><br>
     <hr>
@@ -135,16 +143,16 @@
             <img class="layered-paper-big" width="100%" src="./resources/paper.jpg" alt="Paper thumbnail"/>
         </a>
     </div>
-    <div class="paper-info">
+    <div class="paper-info"style="width: 60%;">
         <h3>SLAMP: Stochastic Latent Appearance and Motion Prediction</h3>
         <p>Adil Kaan Akan, Erkut Erdem, Aykut Erdem and Fatma Guney</p>
         <p>In ICCV, 2021.</p>
-        <!-- <pre><code>@InProceedings{author20XXtitle,
-    title = {Creative and Descriptive Paper Title},
-    author = {Author, First and Author, Second and Author, Third and Author, Fourth and Author, Fifth},
-    booktitle = {Conference},
-    year = {20XX},
-}</code></pre> -->
+        <pre><code>@InProceedings{Akan2021SLAMP,
+    title = {SLAMP: Stochastic Latent Appearance and Motion Prediction},
+    author = {Adil Kaan Akan and Erkut Erdem and Aykut Erdem and Fatma Guney},
+    booktitle = {International Conference on Computer Vision (ICCV)},
+    year = {2021}
+}</code></pre>
     </div>
 
     <br><br>
@@ -153,7 +161,7 @@
     <h1>Acknowledgements</h1>
     <p style="width: 80%;">
         We would like to thank <a href="https://mlia.lip6.fr/franceschi/" target="_blank">Jean-Yves Franceschi</a> and <a href="https://github.com/edouardelasalles" target="_blank">Edouard Delasalles</a> for providing technical and numerical details of the baseline performances,
-        and <a href="http://www.denizyuret.com/" target="_blank">Deniz Yuret</a> for helpful discussions and comments. This work is supported by <a href="https://ai.ku.edu.tr" target="_blank">KUIS AI Center</a>.
+        and <a href="http://www.denizyuret.com/" target="_blank">Deniz Yuret</a> for helpful discussions and comments. K. Akan was supported by KUIS AI Center fellowship, F. Güney by TUBITAK 2232 International Fellowship for Outstanding Researchers Programme, E. Erdem in part by GEBIP 2018 Award of the Turkish Academy of Sciences, A. Erdem by  BAGEP 2021 Award of the Science Academy.</a>.
     </p>
 
     <br><br>
